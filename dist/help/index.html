@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JaLi XLTK - Help</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <nav>
+      <h3>Table of Contents</h3>
+      <a href="#topLine"> Introduction</a>
+      <h4>Excel Custom Functions</h4>
+        <a href="#s1"> DateToText Function</a>
+        <a href="#s2"> getMonthNum Function</a>
+        <a href="#s3"> getMonthName Function</a>
+        <a href="#s4"> getDayNum Function</a>
+        <a href="#s5"> getDayName Function</a>
+        <a href="#s6"> getYearName Function</a>
+        <a href="#s7"> getOrdinal Function</a>
+    </nav>
+
+    <main>
+      <header id="topLine"></header>
+      <h1>
+        <img class="img_logo" src="https://localhost:3000/help/images/logos/logo_JS_Simple_Color.png" alt="Jali Software logo image" /><br/> 
+        <div>Excel ToolKit ("XLTK") - Help</div>
+      </h1>  
+      <section id="intro">
+        <h2>Introduction</h2>
+        <p>
+          Excel ToolKit ("XLTK") is a powerful library of functions that can be
+          used in MS Excel to convert dates into strings for different languages. These strings are
+          then easily used for display purposes. Users are reminded that these functions return
+          strings and as such, they cannot be used for calculation purposes. Version 1.00 of XLTK
+          converts date in Canadian and US English and Canadian French.
+        </p>
+        <p>
+          Each function requires one or more parameters and some accept optional parameters.
+          Optional parameters can always be ommited in which case, default values are used.
+        </p>
+        <p>
+        Parameters are not case sensitive. For example "LOnG" is treated the same as "long", "lonG" or "LONG".</p>
+      </section>
+
+      <!-- =================== -->
+      <!-- DateToText Function -->
+      <!-- =================== -->
+      <hr>
+      <section id="s1">
+        <h2>DateToText Function</h2>
+        <p>Returns a string a date in a specific language and format.</p>
+        <p class="fncSyntax">
+          Syntax: <strong>DateToText( xlDate, lang, fmtId, <em>[yearLength]</em>, <em>[isOrdinal]</em>, <em>[isAll] )</em></strong>
+        </p>  
+        <table>
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Status</th>
+              <th>Type</th>
+              <th>Sample</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong><em>xlDate</em></strong></td>
+              <td>Required</td>
+              <td>Any valid Excel date expressed as a number</td>
+              <td>A1=Today(), A1=2025/12/31, A1=December 31, 2025, etc.  (2025/12/25 is 46022 fo instance.)</td>      
+            </tr>
+            <tr>
+              <td><strong><em>lang</em></strong></td>
+              <td>Required</td>
+              <td>String</td>
+              <td>Output language: "FR-CDN", "F" or "FR" for French, "EN-US", "EN" or "E" for English</td>      
+            </tr>
+            <tr>
+              <td><strong><em>fmtId</em></strong></td>
+              <td>Optional</td>
+              <td>Integer</td>
+              <td>Numeric value: 1 to 7 as per the table below where [YY]YY is controled by the <strong><em>yearLength</em></strong> parameter:<br />
+                <table>
+                  <tr>
+                    <th>fmtId</th>
+                    <th>EN-US</th>
+                    <th>FR-CAN</th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>Mmmm DD, [YY]YY -> December 31, [20]26</td>
+                    <td> DD Mmmm [YY]YY -> 31 décembre [20]26</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Mmm. DD, [YY]YY -> Dec. 31, [20]26</td>
+                    <td>Mmm. DD, [YY]YY DD Mmm. YY(YY) -> 31 déc. [20]26</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>Mmm- DD-[YY]YY -> Dec-31-[20]26</td>
+                    <td>DD-Mmm-[YY]YY -> 31-déc-[20]26</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>YYYY-MM-DD -> 2026-12-31</td>
+                    <td> DD-MM-YYYY -> 31-12-2026</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>Mmmm [YY]YY -> December [20]26</td>
+                    <td> mmmm [YY]YY -> Décembre [20]26</td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td>Weekday, Mmmm DD, [YY]YY -> Thursday, December 31, [20]26</td>
+                    <td>Weekday, DD Mmmm [YY]YY -> Jeudi 31 décembre [20]26</td>
+                  </tr>
+                  <tr>
+                    <td>7</td>
+                    <td>Mmm-YYYY -> Dec-2026</td>
+                    <td>Mmm-YYYY -> Déc-2026</td>
+                  </tr>
+                </table>
+              </td>      
+            </tr>
+            <tr>
+              <td><strong><em>yearLength</em></strong></td>
+              <td>Optional</td>
+              <td>Integer</td>
+              <td>4 for YYYY and 2 for YY. If ommited or different than 4 or 2, 4 (YYYY) is applied</td>
+            </tr>
+            <tr>
+              <td><strong><em>isOrd</em></strong></td>
+              <td>Optional</td>
+              <td>Boolean</td>
+              <td>TRUE or FALSE. Default is FALSE.<br />
+                  If TRUE, adds the proper ordinal suffix to the day: "1st", "2nd ", "3rd", "4th", etc. for
+                  English and "1er" for French<br />
+                  <strong>Applies to <em>fmtId #1</em> only</strong> ('December 31st, 2025' or '1er décembre 2025' for
+                  instance)
+              </td>
+            </tr>
+              <td><strong><em>isALL</em></strong></td>
+              <td>Optional</td>
+              <td>Boolean</td>
+              <td>TRUE or FALSE. Default is FALSE.<br />
+                  Applies if <em>isOrd</em> is TRUE and <em>lang</em> is "FR".<br />
+                  IF TRUE, adds ordinal suffix "e" for "2e", "3e", etc in French<br />
+                  Has no effect on English strings
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+
+        <p>
+          <strong><em>Optional parameters</em></strong>
+        </p>
+        <p>
+          It is important to note that when an optional parameter is used, its position within the
+          function parameters list must be maintained. For instance, if
+          <strong><em>isOrd</em></strong> is used, a placeholder for
+          <strong><em>yearLength</em></strong> must be present:<br />
+          =DateToText(date, Lang, FormatID, isOrd, IsAll) --> <strong>Invalid</strong> as there is no parameter
+          between <strong><em>FormatID</em></strong> and <strong><em>isOrd</em></strong> for
+          <strong><em>yearLength</em></strong
+          ><br />
+          =DateToText(date, Lang, FormatID, ,isOrdinal, IsAll) --> <strong>Valid</strong>. The default for
+          <strong><em>yearLength</em></strong> will be used since its value is 'empty'<br />
+          =DateToText(date, Lang, ,isOrd, isAll) --> <strong>Invalid</strong> as there is one missing parameter
+          between <strong><em>Lang</em></strong> and <strong><em>isOrdinal</em></strong> <br />
+          =DateToText(date, Lang, , ,isOrd, IsAll) --> <strong>Valid</strong>. The default for
+          <strong><em>FormatID</em></strong> and <strong><em>yearLength</em></strong> will be
+          used<br />
+          Example:<br />
+          =DateToText(A1, A2,A3,A4,A5) where:<br />
+          Cell(A1): 2025/12/25 (number 46022)<br />
+          Cell(A2): "FR"<br />
+          Cell(A3): 1.2 -> 1<br />
+          Cell(A4): 4 (or is empty)<br />
+          Cell(A5): TRUE (or is empty)<br />
+          Cell(A6): FALSE (or is empty)<br />
+            returns  "December 25th, 2025"
+        </p>
+      </section>
+      <hr>
+      <!-- ==================== -->
+      <!-- getMonthNum Function -->
+      <!-- ==================== -->
+      <section id="s2">
+        <h2>getMonthNum Function</h2>
+        <p>Returns an integer n from 1 to 12 representing the n<sup>th</sup> month of the year.</p>
+        <p class="fncSyntax">
+          Syntax: <strong>getMonthNum(xlDate)</strong>
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Status</th>
+              <th>Type</th>
+              <th>Sample</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong><em>xlDate</em></strong></td>
+              <td>Required</td>
+              <td>Any valid Excel date expressed as a number</td>
+              <td>A1=Today(), A1=2025/12/31, A1=December 31, 2025, etc.  (2025/12/25 is 46022 fo instance.)</td>      
+            </tr>
+
+          </tbody>
+        </table><br />
+        <p>This is the equivalent of Excel buit-in function Month().</p>
+        <p>
+          Examples:<br />
+            =getMonthNum(A1) where Cell(A1) contains 2025/12/25 (number 46022), returns 12 (December being the 12<sup>th</sup> month of the year)<br/>
+            =getMonthNum(46022) returns 12 (46022 being December 25, 2025 and December being the 12<sup>th</sup> month of the year)
+        </p>
+      </section>
+      <hr>
+      <!-- ===================== -->
+      <!-- getMonthName Function -->
+      <!-- ===================== -->
+      <section id="s3">
+        <h2>getMonthName Function</h2>
+        <p>Returns a string representing the translation of the month of a date in a specific language and format.</p>
+        <p class="fncSyntax">
+          Syntax: <strong>getMonthName(xlDate, lang, <em>[fmt]</em>)</strong>
+        </p>  
+          <br />
+
+        <table>
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Status</th>
+              <th>Type</th>
+              <th>Sample</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong><em>xlDate</em></strong></td>
+              <td>Required</td>
+              <td>Any valid Excel date expressed as a number</td>
+              <td>A1=Today(), A1=2025/12/31, A1=December 31, 2025, etc.  (2025/12/25 is 46022 fo instance.)</td>      
+            </tr>
+            <tr>
+              <td><strong><em>lang</em></strong></td>
+              <td>Required</td>
+              <td>String</td>
+              <td>Output language: "FR-CDN", "F" or "FR" for French, "EN-US", "EN" or "E" for English</td>      
+            </tr>
+            <tr>
+              <td><strong><em>fmt</em></strong></td>
+              <td>Optional</td>
+              <td>String</td>
+              <td>Output format: "Short" for abbreviated month, "Long" for full month name.  Default is "Long" </td>      
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          Examples:<br />
+            =getMonthName(A1, A2) where Cell(A1) contains 2025/12/25 (number 46022), Cell(A2) contains "FR-CDN" returns "Décembre"<br/>
+            =getMonthNum(46022, "FR-CDN", "Short") returns "Déc" (46022 being December 25, 2025)
+        </p>
+
+      </section>
+      <hr>
+      <!-- ================== -->
+      <!-- getDayNum Function -->
+      <!-- ================== -->
+      <section id="s4">
+        <h2>getDayNum Function</h2>
+        <p>Returns an integer n from 1 to 31 representing the n<sup>th</sup> day of the month of a specific date</p>
+        <p class="fncSyntax">
+          Syntax: <strong>getDayNum(xlDate)</strong>
+        </p>  
+        <table>
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Status</th>
+              <th>Type</th>
+              <th>Sample</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong><em>xlDate</em></strong></td>
+              <td>Required</td>
+              <td>Any valid Excel date expressed as a number</td>
+              <td>A1=Today(), A1=2025/12/31, A1=December 31, 2025, etc.  (2025/12/25 is 46022 fo instance.)</td>      
+            </tr>
+          </tbody>
+        </table><br />
+        <p>This is the equivalent of Excel buit-in function Day().</p>
+        <p>
+          Examples:<br />
+            =getDayNum(A1) where Cell(A1) contains 2025/12/25 (number 46022), returns 25 (December 25 being the 25<sup>th</sup> day of the month)<br/>
+            =getMonthNum(46022) returns 25 (46022 being December 25, 2025 and December 25 being the 25<sup>th</sup> day of the month)
+        </p>
+      </section>
+      <hr>
+      <!-- =================== -->
+      <!-- getDayName Function -->
+      <!-- =================== -->
+      <section id="s5">
+        <h2>getDayName Function</h2>
+        <p>Returns a string representing the translation of the weekday of a date in a specific language and format.</p>
+        <p class="fncSyntax">
+          Syntax: <strong>getDayName(xlDate, lang)</strong>
+        </p>
+         <table>
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Status</th>
+              <th>Type</th>
+              <th>Sample</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong><em>xlDate</em></strong></td>
+              <td>Required</td>
+              <td>Any valid Excel date expressed as a number</td>
+              <td>A1=Today(), A1=2025/12/31, A1=December 31, 2025, etc.  (2025/12/25 is 46022 fo instance.)</td>      
+            </tr>
+            <tr>
+              <td><strong><em>lang</em></strong></td>
+              <td>Required</td>
+              <td>String</td>
+              <td>Output language: "FR-CDN", "F" or "FR" for French, "EN-US", "EN" or "E" for English</td>      
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          Examples:<br />
+            =getDayName(A1, A2) where Cell(A1) contains 2025/12/25 (number 46022), Cell(A2) contains "EN-US" returns "Thursday", December 25, 2025 being a Thursday<br/>
+            =getMonthNum(46022, "FR-CDN") returns "jeudi" (46022 being December 25, 2025 which is a Thursday or "jeudi" in French)
+        </p>
+      </section>
+      <hr>
+      <!-- ==================== -->
+      <!-- getYearName Function -->
+      <!-- ==================== -->
+      <section id="s6">
+        <h2>getYearName Function</h2>
+        <p>Returns a string representing the year of a specific date</p>
+        <p class="fncSyntax">
+          Syntax: <strong>getYearName(xlDate, yearLength)</strong>
+        </p>
+          Where:<br />
+
+        <table>
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Status</th>
+              <th>Type</th>
+              <th>Sample</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong><em>xlDate</em></strong></td>
+              <td>Required</td>
+              <td>Any valid Excel date expressed as a number</td>
+              <td>A1=Today(), A1=2025/12/31, A1=December 31, 2025, etc.  (2025/12/25 is 46022 fo instance.)</td>      
+            </tr>
+            <tr>
+              <td><strong><em>yearLength</em></strong></td>
+              <td>Optional</td>
+              <td>Integer</td>
+              <td>4 for YYYY and 2 for YY. If ommited or different than 4 or 2, 4 (YYYY) is applied</td>
+            </tr>
+          </tbody>
+        </table><br />
+        <p>This is the equivalent of Excel buit-in function TEXT(xlDate, "YYYY") for yearLength = 4 and TEXT(xlDate, "YY") for yearLength = 2.</p>
+        <p>
+          Examples:<br />
+            =getYearName(A1) where Cell(A1) contains 2025/12/25 (number 46022), returns "2025"<br/>
+            =getYearName(46022, 2) returns "25"
+        </p>
+      </section>
+      <hr>
+
+      <!-- ==================== -->
+      <!-- getOrdinal Function -->
+      <!-- ==================== -->
+      <section id="s7">
+        <h2>getOrdinal Function</h2>
+        <p>Returns a string representing the ordinal of an integer.  The string can be appended to any integer.</p>
+        <p class="fncSyntax">
+          Syntax: <strong>getYearName(num, lang, isAll)</strong>
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Status</th>
+              <th>Type</th>
+              <th>Sample</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong><em>num</em></strong></td>
+              <td>Required</td>
+              <td>Integer</td>
+              <td>Any Integer<br/>Passing a decimal number ( 2.5 for instance) will throw an error</td>      
+            </tr>
+            <tr>
+              <td><strong><em>lang</em></strong></td>
+              <td>Required</td>
+              <td>String</td>
+              <td>Output language: "FR-CDN", "F" or "FR" for French, "EN-US", "EN" or "E" for English</td>      
+            </tr>
+            <tr>
+              <td><strong><em>isAll</em></strong></td>
+              <td>Optional</td>
+              <td>Boolean</td>
+              <td><strong>Applies to French only</strong><br/>If "TRUE", ordinal "e" is return for integers other than 1<br/>Has no effect on English numbers</td>      
+            </tr>
+          </tbody>
+        </table><br />
+        <p>
+          Examples:<br />
+            =getOrdinal(A1, "FR") where Cell(A1) contains 1, returns "er" (can be appended to 1 to get "1er")<br/>
+            =getOrdinal(31, "en", TRUE) returns "st" (can be appended to 31 to get "31st").  Note that the third parameter <em>isAll</em> = "TRUE" has no effect on English ordinals<br/>  
+            =getYearName(Day(46022), "en") returns "th" (46022 is December 25, 2025 and Day(46022) = 25 whose ordinl is "th".  Can be appended to 25 to get "25th" )<br/>
+            =getOrdinal(6, "FR") returns "" (or empty) since the default value for <em>isAll</em> is "FALSE"<br/>
+            =getOrdinal(6, "FR", TRUE) returns "e" (can be appended to 6 to get "6e")
+        </p>
+        <p>
+          Note1: Function <strong>DateToText()</strong> uses <strong>getOrdinal()</strong> when the <em>isOrd</em> parameter of function <strong>DateToText()</strong> is set to TRUE.  We have made this function available to provide users with the ability to append an ordinal string to any integer.
+        </p>
+        <p>
+          Note2: MS Excel does not allow a function to return a formated string. For that reason, it is not possible to return the ordinal in superscript (31<sup>st</sup> for instance).  To work around this limitation, users can use the provided functions to create a series of strings that can be sent to MS Word for instance.  In MS Word, users can format the ordinal mergefield to suprscript like this:<br/><br/>
+          1. Define mailMerge field names:  Cell(A1) = "mrgMonth"  ;  Cell(B1) = "mrgDay"  ;   Cell(C1) = "mrgOrd"  ;  Cell(D1) = "mrgYear"<br/><br/>
+          2. Get the data:        Cell(A2) = "=getMonthName(46022, "EN")"  ;  Cell(B2) = "getDayNum(46022)"  ;   Cell(C2) = "getOrdinal(B2)"  ;  Cell(D2) = "getYearName(46022)"<br/><br/>
+          3. Results:         Cell(A2) = "December"  ;  Cell(B2) = "25"  ;   Cell(C2) = "st"  ;  Cell(D2) = "2025"<br/><br/>
+          4. In MS Word, use this:  {MERGEFIELD mrgMonth} {MERGEFIELD mrgDay}{MERGEFIELD mrgOrd \*sup} {MERGEFIELD mrgYear}   Result:  December 25<sup>th</sup>, 2025.<br/><br/>  
+          This is very flexible and can be used in numerous maners. It prevents the use of complex formulas and coding in MS Word to get the ordinal in superscript.<br/><br/> 
+          You can build strings like "1<sup>er</sup> décembre 2025", "25<sup>e</sup> jour du mois de décembre", "21<sup>st</sup> day of september of '99", etc.<br/><br/>
+          While XLTK returns French month and day names in lower cases, using the MS Word "\*Caps" switch, you can get "Février 2025" or "Lundi, 1<sup>er</sup> août 1954" for instance.   
+        </p>
+        <p>
+          Download our sample files to explore these functions.
+        </p>
+      </section>
+    </main>
+
+    <script src="./JS/toc-click.js"></script>
+  </body>
+</html>

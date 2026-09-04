@@ -1,0 +1,82 @@
+<!-- Numbers styles -->
+<link href="taskpane/tabs/numbers.css" rel="stylesheet" type="text/css" />
+
+<h2 id="numbers-title">Number Formats</h2>
+<div>
+    MLTK.FormatNumber(<em>num</em>, <em>loc</em>, <em>style</em>, <em>currencyDisplay</em>, <em>[dec]</em>)<br>
+</div>
+
+<section id="numberInput">
+    <h3 id="numberInputsHeader">Enter a Value for:</h3>
+    <div class="numbers-section">
+        <label for="numbersNumberValueInput" id="numbersNumberLbl">num = </label>
+        <input id="numbersNumberValueInput" type="text" value="1234567.89" />
+        <button type="button" id="numbersNumberLoadCellBtn">Load Selected Cell</button>
+    </div>
+    <div class="numbers-section">
+        <label for="numbersLocaleValueInput" id="numbers-locale-label">loc = </label>
+        <input id="numbersLocaleValueInput" type="text" value="en-CA" />
+        <button type="button" id="numbersLocaleLoadCellBtn">Load Selected Cell</button>
+    </div>
+</section>
+
+<!-- <section id="localeInput">
+    <h3 id="localeInputsHeader">Enter a Locale:</h3>
+</section> -->
+
+<!-- Locale Summary -->
+<!-- <div id="numbersLocaleSummary" class="numbers-summary"></div> -->
+
+<!-- Currency Formatting -->
+<h3 id="currencyHeader">Currency Formatting (style is "currency")</h3>
+<div><strong><em>currencyDisplay</strong></em> :<br>
+    <span id="currencyPreview" class="numbers-preview"></span>
+</div>
+
+
+<!-- <button id="currencyApplyBtn">Apply to Selection</button>
+<button id="currencyCopyBtn">Copy Mask</button> -->
+
+<!-- Numeric Formatting -->
+<h3 id="numericHeader">Numeric Formatting (style other than 'currency')</h3>
+<p>*** Note: <em>'currencyDisplay'</em> MUST be present but is ignored. Can be any string or ("") or a
+     reference to any cell.</p>
+<p>Examples with all other options (decimal, percent, scientific and engineering):</p>
+<div>
+    <label for="numericDecimalsInput">Select the number of Decimals:</label>
+    <input id="numericDecimalsInput" type="number" value="2" min="0" max="10" /><br>
+    <span id="numericPreview" class="numbers-preview"></span>
+</div>
+
+<!-- 
+
+
+<div class="numbers-section">
+    <label for="numericStyleSelect">Style:</label>
+    <select id="numericStyleSelect">
+        <option value="decimal">Decimal</option>
+        <option value="percent">Percent</option>
+        <option value="scientific">Scientific</option>
+        <option value="engineering">Engineering</option>
+    </select>
+
+    <div id="numericPreview" class="numbers-preview"></div>
+</div> -->
+
+<!-- <div id="numericPreview" class="numbers-preview"></div> -->
+<!-- <button id="numericApplyBtn">Apply to Selection</button>
+<button id="numericCopyBtn">Copy Mask</button> -->
+
+<!-- Custom Format -->
+<!-- <h3 id="customHeader">Custom Format</h3>
+<div class="numbers-section">
+    <label>Format:</label>
+    <input id="customMaskInput" type="text" placeholder="Type a valid format" />
+</div>
+
+<div id="customPreview" class="numbers-preview"></div> -->
+
+<!-- Output -->
+<!-- <div id="numbersOutput" class="numbers-output"></div>
+<div id="numbersLocaleSummary" class="numbers-output"></div> -->
+

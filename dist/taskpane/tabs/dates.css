@@ -1,0 +1,121 @@
+/* dates.css - basic layout and invalid state */
+#datesFormatInput {
+    width: 420px;
+    font-family: Consolas, monospace;
+    padding: 4px 6px;
+    box-sizing: border-box;
+}
+
+.dates-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 12px;
+}
+
+.dates-table th,
+.dates-table td {
+    border: 1px solid #ccc;
+    padding: 6px 10px;
+    text-align: left;
+    table-layout: fixed;
+}
+
+.dates-table th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+.dates-table th:first-child,
+.dates-table td:first-child {
+  width: 70px;
+  max-width: 70px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dates-table th:nth-child(2),
+.dates-table td:nth-child(2) {
+  width: 20px;
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+
+
+/* invalid custom format highlight */
+.input-invalid {
+    border: 2px solid #d9534f;
+    background-color: #fff6f6;
+}
+
+/* small utility styles for buttons and preview */
+.dates-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.dates-output {
+    margin-top: 12px;
+    font-family: Segoe UI, Arial, sans-serif;
+    font-size: 13px;
+}
+
+button {
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+/* hide element when this class is present */
+.datesDatePickNone {
+  display: none !important;
+}
+
+/* Visibility + fade transition for date picker / text input */
+.datesDatePickNone {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 220ms ease-in-out, visibility 220ms ease-in-out;
+  display: inline-block; /* keep layout stable */
+}
+
+.datesDatePickVisible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity 220ms ease-in-out, visibility 220ms ease-in-out;
+  display: inline-block;
+}
+
+/* Text input visible/hidden states (mirror picker) */
+.datesTextHidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 220ms ease-in-out, visibility 220ms ease-in-out;
+  display: inline-block;
+}
+
+.datesTextVisible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity 220ms ease-in-out, visibility 220ms ease-in-out;
+  display: inline-block;
+}
+
+/* Optional: small fade timing helper for smoother UX */
+.dates-fade {
+  transition-timing-function: cubic-bezier(.2,.8,.2,1);
+}
+
+/* visible inline style for the text input when not hidden */
+.datesTextInline {
+  display: inline-block;
+}

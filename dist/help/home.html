@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <title>MLTK Date Toolkit — Help & Reference</title>
+    <link rel="stylesheet" href="./stylesHome.css" />
+</head>
+<body>
+
+<!-- <h1>MLTK Date Toolkit — Help & Reference</h1> -->
+    <h1>
+        <img class="img_logo" src="https://localhost:3000/help/images/logos/logo_JS_Simple_Color.png" alt="Jali Software logo image" /><br/> 
+        <div>JaLi's Multi-Language ToolKit ("MLTK") for Excel - Documentation</div>
+    </h1>  
+
+    <p>The MLTK Date Toolkit provides powerful, locale‑aware date formatting functions for Excel. 
+    It supports custom formats, literals, escape sequences, capitalization overrides, ordinal switches, 
+    and multiple languages.</p>
+
+    <hr>
+
+<h2>1. Main Function: <code>MLTK.FORMATDATE()</code></h2>
+
+<p><strong>Syntax:</strong></p>
+<div class="example">
+<code>=MLTK.FORMATDATE(date, lang, formatType, customFormat)</code>
+</div>
+
+<p><strong>Arguments:</strong></p>
+<ul>
+    <li><strong>date</strong> — A Temporal date, ISO string, or Excel serial number.</li>
+    <li><strong>lang</strong> — A locale code (e.g., <code>en-US</code>, <code>fr-CA</code>, <code>es-ES</code>).</li>
+    <li><strong>formatType</strong> — <code>"short"</code>, <code>"long"</code>, or <code>"custom"</code>.</li>
+    <li><strong>customFormat</strong> — Required when <code>formatType="custom"</code>.</li>
+</ul>
+
+<p><strong>Example:</strong></p>
+<div class="example">
+<code>=MLTK.FORMATDATE(A2, "fr-CA", "custom", "DDDD, D*/oa MMMM YYYY")</code><br>
+→ <em>lundi, 2e juillet 1990</em>
+</div>
+
+<hr>
+
+<h2>2. Custom Format Tokens</h2>
+
+<p>The following tokens can be used inside a custom format string.</p>
+
+<table>
+<tr><th>Token</th><th>Description</th><th>Example</th></tr>
+<tr><td>YYYY</td><td>4‑digit year</td><td>1990</td></tr>
+<tr><td>YY</td><td>2‑digit year</td><td>90</td></tr>
+
+<tr><td>MMMM</td><td>Full month name</td><td>July</td></tr>
+<tr><td>MMM</td><td>Short month name</td><td>Jul</td></tr>
+<tr><td>MM</td><td>Month (2 digits)</td><td>07</td></tr>
+<tr><td>M</td><td>Month (1–2 digits)</td><td>7</td></tr>
+
+<tr><td>DDDD</td><td>Full weekday name</td><td>Monday</td></tr>
+<tr><td>DDD</td><td>Short weekday name</td><td>Mon</td></tr>
+<tr><td>DD</td><td>Day (2 digits)</td><td>02</td></tr>
+<tr><td>D</td><td>Day (1–2 digits)</td><td>2</td></tr>
+
+<tr><td>DDORD</td><td>Day with ordinal (locale rules)</td><td>2nd</td></tr>
+
+<tr><td>D_O</td><td>Day + ordinal (only if locale allows)</td><td>2nd (en-US), 2 (fr-CA)</td></tr>
+<tr><td>D_OA</td><td>Day + ordinal (always)</td><td>2nd (en-US), 2e (fr-CA)</td></tr>
+
+<tr><td>CMMM</td><td>Capitalized full month</td><td>Juillet → Juillet</td></tr>
+<tr><td>CMM</td><td>Capitalized short month</td><td>juil. → Juil.</td></tr>
+<tr><td>Cddd</td><td>Capitalized full weekday</td><td>lundi → Lundi</td></tr>
+<tr><td>Cdd</td><td>Capitalized short weekday</td><td>lun. → Lun.</td></tr>
+</table>
+
+<hr>
+
+<h2>3. Literals</h2>
+
+<p>Anything inside single quotes is treated as literal text.</p>
+
+<div class="example">
+<code>DD 'de' MMMM 'de' YYYY</code><br>
+→ <em>12 de julio de 1990</em>
+</div>
+
+<p>Use this for Spanish, French, or any language requiring fixed text.</p>
+
+<hr>
+
+<h2>4. Escape Sequences</h2>
+
+<p>Anything inside square brackets is literal text.</p>
+
+<div class="example">
+<code>MMMM [Q] YYYY</code><br>
+→ <em>July Q 1990</em>
+</div>
+
+<p>Useful for adding symbols or fixed markers.</p>
+
+<hr>
+
+<h2>5. Ordinal Switches</h2>
+
+<p>Two switches can be applied after a single <code>D</code> token:</p>
+
+<table>
+<tr><th>Switch</th><th>Meaning</th><th>Example</th></tr>
+<tr><td>D*/o</td><td>Append ordinal only if locale allows</td><td>2 → 2nd (en-US), 2 (fr-CA)</td></tr>
+<tr><td>D*/oa</td><td>Append ordinal to all numbers if locale allows</td><td>2 → 2nd (en-US), 2e (fr-CA)</td></tr>
+</table>
+
+<p>These are normalized internally to <code>D_O</code> and <code>D_OA</code>.</p>
+
+<hr>
+
+<h2>6. Format Normalization</h2>
+
+<p>The toolkit automatically corrects common user mistakes:</p>
+
+<ul>
+    <li><code>mmmm</code> → <code>MMMM</code></li>
+    <li><code>mmm</code> → <code>MMM</code></li>
+    <li><code>DDDD</code> → <code>dddd</code></li>
+    <li><code>DDD</code> → <code>ddd</code></li>
+    <li><code>d*/oa</code> → <code>D_OA</code></li>
+    <li><code>d*/o</code> → <code>D_O</code></li>
+</ul>
+
+<p>Future versions may display warnings in the taskpane.</p>
+
+<hr>
+
+<h2>7. Supported Locales</h2>
+
+<p>The toolkit supports a wide range of language tags, including:</p>
+
+<div class="example">
+<code>fr, fr-CA, fr-FR, en-US, en-GB, en-CA, es-ES, es-MX, de-DE, it-IT, pt-BR, pt-PT</code>
+</div>
+
+<p>If a locale is not found, <strong>en-US</strong> is used as fallback.</p>
+
+<hr>
+
+<h2>8. Examples</h2>
+
+<h3>French (Canada)</h3>
+<div class="example">
+<code>DDDD, D*/oa MMMM YYYY</code><br>
+→ <em>lundi, 2e juillet 1990</em>
+</div>
+
+<h3>English (US)</h3>
+<div class="example">
+<code>MMMM DD, YYYY</code><br>
+→ <em>July 02, 1990</em>
+</div>
+
+<h3>Spanish (Spain)</h3>
+<div class="example">
+<code>DD 'de' MMMM 'de' YYYY</code><br>
+→ <em>12 de julio de 1990</em>
+</div>
+
+<hr>
+
+<h2>9. Error Handling</h2>
+
+<p>The toolkit validates:</p>
+<ul>
+    <li>unmatched quotes</li>
+    <li>unmatched brackets</li>
+    <li>invalid tokens</li>
+    <li>unknown locale codes</li>
+</ul>
+
+<p>Invalid formats produce a clear error message.</p>
+
+<hr>
+
+<h2>10. Helper Functions</h2>
+
+<p>The toolkit includes helper functions for advanced users:</p>
+
+<ul>
+    <li><strong>MLTK.GetMonthName(date, lang)</strong></li>
+    <li><strong>MLTK.GetMonthAbbrev(date, lang)</strong></li>
+    <li><strong>MLTK.GetDayName(date, lang)</strong></li>
+    <li><strong>MLTK.GetDayAbbrev(date, lang)</strong></li>
+    <li><strong>MLTK.GetOrdinal(day, lang)</strong></li>
+</ul>
+
+<p>These functions are used internally but can also be called directly.</p>
+
+<hr>
+
+<h2>11. Notes</h2>
+
+<p>This toolkit is designed to be:</p>
+<ul>
+    <li>locale‑aware</li>
+    <li>collision‑free</li>
+    <li>fully validated</li>
+    <li>Excel‑friendly</li>
+    <li>Temporal‑compatible</li>
+</ul>
+
+<p>It is ideal for multilingual reporting, dashboards, and professional documents.</p>
+
+</body>
+</html>

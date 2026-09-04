@@ -1,0 +1,240 @@
+/* 
+ * Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license.
+ * See LICENSE in the project root for license information.
+ */
+
+ html,
+ body {
+     width: 100%;
+     height: 100%;
+     margin: 0;
+     padding: 0;
+ }
+ 
+ ul {
+     margin: 0;
+     padding: 0;
+ }
+ 
+ .ms-welcome__header {
+    padding: 5px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    align-items: center;
+ }
+
+  .ms-welcome__header > h1 {
+     width: 100%;
+     text-align: center;
+     font-size: x-large;
+     margin-top: 0;   
+     margin-bottom: 0;   
+    }
+
+ .ms-welcome__header > h2 {
+     width: 100%;
+     text-align: center;
+     font-size: x-small;
+     margin-top: 0;   
+     margin-bottom: 0;   
+    }
+
+ 
+ .ms-welcome__main {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-flex: 1 0 0;
+    flex: 1 0 0;
+    padding: 10px 20px;
+ }
+ 
+ .ms-welcome__main > h2 {
+     width: 100%;
+     text-align: center;
+ }
+ 
+ .ms-welcome__features {
+     list-style-type: none;
+     margin-top: 20px;
+ }
+ 
+ .ms-welcome__features.ms-List .ms-ListItem {
+     padding-bottom: 20px;
+     display: -webkit-flex;
+     display: flex;
+ }
+ 
+ .ms-welcome__features.ms-List .ms-ListItem > .ms-Icon {
+     margin-right: 10px;
+ }
+ 
+ .ms-welcome__action.ms-Button--hero {
+     margin-top: 30px;
+ }
+ 
+/* .ms-Button.ms-Button--hero .ms-Button-label {
+  color: #0078d7;
+} */
+
+.ms-Button.ms-Button--hero:hover .ms-Button-label, #add1:hover,
+.ms-Button.ms-Button--hero:focus .ms-Button-label {
+  /* color: #005a9e; */
+  font-weight: 400;
+  cursor: pointer;
+}
+
+b {
+    font-weight: bold;
+}
+
+#runRed {
+    background-color: red;
+    color: white;
+}
+
+#runYellow {
+    background-color: yellow;
+    color: darkgGreen;
+}
+
+
+#add1 {
+    background-color: lightblue;
+    color: darkgBlue;
+}
+
+
+.btnHelp, .btnInfo  {
+    font-size: medium;
+    color: blue;
+    background-color: aliceblue;
+}
+
+.clickHere:hover {
+  cursor: pointer;
+  font-style: italic;
+}
+
+.locale-inspector {
+    font-family: Segoe UI, sans-serif;
+    padding: 12px;
+}
+
+#localeInput {
+    width: 100%;
+    padding: 6px;
+    margin-bottom: 10px;
+}
+
+#lookupBtn {
+    padding: 6px 12px;
+    margin-bottom: 12px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    width: 140px;
+    padding: 4px;
+    background: #f0f0f0;
+}
+
+td {
+    padding: 4px;
+}
+
+#tabs {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.tab-btn {
+    padding: 6px 12px;
+    background: #e0e0e0;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.tab-btn.active {
+    background: #0078d4;
+    color: white;
+}
+
+.tab-panel {
+    display: none;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+
+.menu-bar {
+  display: flex;
+  align-items: center;
+  background: #f3f3f3;
+  border-bottom: 1px solid #ccc;
+  padding: 4px 8px;
+  font-family: Segoe UI, sans-serif;
+  height: 32px;
+  position: relative;
+  z-index: 999999; /* highest layer */
+  pointer-events: auto; /* ensure it receives clicks */
+}
+
+.menu-item {
+  position: relative;
+  margin-right: 16px;
+  padding: 4px 6px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.menu-item.dropdown {
+  position: relative;
+}
+
+.menu-chevron {
+  margin-left: 4px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 28px;
+  left: 0;
+  background: white;
+  border: 1px solid #ccc;
+  min-width: 160px;
+  z-index: 1000;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.15);
+}
+
+/* When JS toggles this class, the menu opens */
+.dropdown.open .dropdown-content {
+  display: block;
+}
+
+.dropdown-item {
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background: #f0f0f0;
+}

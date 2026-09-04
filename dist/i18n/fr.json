@@ -1,0 +1,83 @@
+{
+    "ui": {
+        "tabs": {
+            "locale": "Outils de langue",
+            "merge": "Aperçu de fusion",
+            "dates": "Formats de date",
+            "numbers": "Formats numériques",
+            "settings": "Paramètres"
+        }
+    },
+    "merge": {
+        "controls":{
+            "loadRecBtnLbl": "Rec sélect.",
+            "prevBtnLbl": "Précédent",
+            "nextBtnLbl": "Suivant",
+            "copyBtnLbl": "Copier Press. Papier",
+            "insertBtnLbl": "Inséré dans feuille",
+            "goBtnLbl": "Fusionner",
+            "recNumLabelLbl": "ID",
+            "recNumInputPlaceHolder": "Entrez un ID"
+        },
+        "ltrTexts":{
+            "dear": "Cher",
+            "ltrP01": "Ce relevé contient de l’information au sujet de votre emploi chez JaLi Software.",
+            "ltrP02": "Cette information représente les données que nous avons à votre sujet. Veuillez examiner attentivement cette information et contacter les ressources humaines si vous devez apporter des modifications.",
+            "personalInfo": "Informations personnelles :",
+            "planInfo": "Date du relevé :",
+            "dob": "Date de naissance :",
+            "doh": "Date d'embauche :",
+            "age60": "Atteinte de l'âge 60 :",
+            "age65": "Atteinte de l'âge 65 :",
+            "erd": "Date de retraite anticipée (DRA) :",
+            "nrd": "Date de retraite normale (DRN) :",
+            "salary": "Salaire (annuel) :",
+            "closingP01": "Si vous avez des questions, veuillez contacter les ressources humaines au 1 (888) 555-5555.",
+            "closingP02": "Jean Untel",
+            "closingP03": "Directeur, ressources humaines"
+        }
+    },
+    "locale": {
+        "controls":{
+            "inputLabel": "Code de langue :",
+            "localeLookupBtn": "Entrer",
+            "loadSelectionBtn": "Charger ",
+            "localeLbl": "Tag:",
+            "langCodeLbl": "Code  de la langue :",
+            "langNameLbl": "Nom de la langue :",
+            "langNameLocalLbl": "Nom de la langue (locale):",
+            "countryCodeLbl": "Code de pays :",
+            "countryNameLbl": "Nom du pays :",
+            "flagLbl": "Drapeau :",
+            "continentLbl": "Continent :",
+            "regionLbl": "Région :",
+            "currencyLbl": "Devise",
+            "currencyNameLbl": " - Nom :",
+            "currencyNameLocalLbl": " - Nom (local):",
+            "currencyCodeLbl": " - Code :",
+            "currencySymbolLbl": " - Symbole :"
+        }
+    },
+    "dates": {
+        "title": "Formats de dates",
+        "locale": "Paramètres régionaux",
+         "show": "Afficher les formats",
+        "apply": "Appliquer à la sélection"
+    },
+    "numbers": {
+        "title": "Number Formats",
+        "inputsSection": "Currency Formatting",
+        "currencySection": "Currency Formatting",
+        "numericSection": "Numeric Formatting",
+        "customSection": "Custom Formatting",
+        "locale": "Locale",
+        "show": "Show Formats",
+        "apply": "Apply to selection",
+        "controls": {
+            "numbersLoadBtn": "Load",
+            "numbersNumberLbl": "Number",
+            "apply": "Apply to selection",
+            "copy": "Copy "
+        }
+    }
+}

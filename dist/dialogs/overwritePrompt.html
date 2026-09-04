@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en-us">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jali Excel Toolkit Add-in</title>
+  </head>
+<body style="font-family:Segoe UI; padding:20px;">
+    <h3>Cell is not empty</h3>
+    <p>Do you want to overwrite its content?</p>
+
+    <button onclick="Office.context.ui.messageParent('yes')">
+        Overwrite
+    </button>
+
+    <button onclick="Office.context.ui.messageParent('no')">
+        Cancel
+    </button>
+
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+</body>
+</html>

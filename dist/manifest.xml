@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
+  <Id>e3661df1-692c-4c47-95d6-14989c6e7643</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>JaLi Software</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="JaLi Software Excel Toolkit"/>
+  <Description DefaultValue="Provides additional functionalyties to Excel."/>
+  <IconUrl DefaultValue="https://localhost:3000/assets/icon-32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://localhost:3000/assets/jali-logo-img-64.png"/>
+  <SupportUrl DefaultValue="https://www.jalisoftware.com/help"/>
+  <AppDomains>
+    <AppDomain>https://www.jalisoftware.com</AppDomain>
+  </AppDomains>
+  <Hosts>
+    <Host Name="Workbook"/>
+  </Hosts>
+  <Requirements>
+    <Sets DefaultMinVersion="1.1">
+      <Set Name="SharedRuntime" MinVersion="1.1"/>
+    </Sets>
+  </Requirements>
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://localhost:3000/taskpane.html"/>
+  </DefaultSettings>
+  <Permissions>ReadWriteDocument</Permissions>
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Hosts>
+      <Host xsi:type="Workbook">
+        <Runtimes>
+          <Runtime resid="Taskpane.Url" lifetime="long"/>
+        </Runtimes>
+        <AllFormFactors>
+          <ExtensionPoint xsi:type="CustomFunctions">
+            <Script>
+              <SourceLocation resid="Functions.Script.Url"/>
+            </Script>
+            <Page>
+              <SourceLocation resid="Taskpane.Url"/>
+            </Page>
+            <Metadata>
+              <SourceLocation resid="Functions.Metadata.Url"/>
+            </Metadata>
+            <Namespace resid="Functions.Namespace"/>
+          </ExtensionPoint>
+        </AllFormFactors>
+        <DesktopFormFactor>
+          <GetStarted>
+            <Title resid="GetStarted.Title"/>
+            <Description resid="GetStarted.Description"/>
+            <LearnMoreUrl resid="GetStarted.LearnMoreUrl"/>
+          </GetStarted>
+          <FunctionFile resid="Taskpane.Url"/>
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+
+            <CustomTab id="tabJaLi">
+              
+              <Group id="CommandsGroup">
+                <Label resid="CommandsGroup.Label"/>
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16x16"/>
+                  <bt:Image size="32" resid="Icon.32x32"/>
+                  <bt:Image size="80" resid="Icon.80x80"/>
+                </Icon>
+                <Control xsi:type="Button" id="TaskpaneButton">
+                  <Label resid="TaskpaneButton.Label"/>
+                  <Supertip>
+                    <Title resid="TaskpaneButton.Label"/>
+                    <Description resid="TaskpaneButton.Tooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16x16"/>
+                    <bt:Image size="32" resid="Icon.32x32"/>
+                    <bt:Image size="80" resid="Icon.80x80"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>ButtonId1</TaskpaneId>
+                    <SourceLocation resid="Taskpane.Url"/>
+                  </Action>
+                </Control>
+              </Group>
+
+              <Group id="grp2">
+                <Label resid="grp2.Label"/>
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16x16"/>
+                  <bt:Image size="32" resid="Icon.32x32"/>
+                  <bt:Image size="80" resid="Icon.80x80"/>
+                </Icon>
+                <Control xsi:type="Button" id="grp2btn3">
+                    <Label resid="grp2btn3.Label" />
+                    <Supertip>
+                        <Title resid="grp2btn3.Label" />
+                        <Description resid="grp2btn3.ToolTip" />
+                    </Supertip>
+                    <Icon>
+                        <bt:Image size="16" resid="Icon.16x16"/>
+                        <bt:Image size="32" resid="Icon.32x32"/>
+                        <bt:Image size="80" resid="Icon.80x80"/>
+                    </Icon>
+                    <Action xsi:type="ExecuteFunction">
+                        <FunctionName>writeFullName</FunctionName>
+                    </Action>
+                </Control>
+                <!-- <Control xsi:type="Button" id="grp2btn4">
+                    <Label resid="grp2btn4.Label" />
+                    <Supertip>
+                        <Title resid="grp2btn4.Label" />
+                        <Description resid="grp2btn4.ToolTip" />
+                    </Supertip>
+                    <Icon>
+                        <bt:Image size="16" resid="Icon.16x16"/>
+                        <bt:Image size="32" resid="Icon.32x32"/>
+                        <bt:Image size="80" resid="Icon.80x80"/>
+                    </Icon>
+                    <Action xsi:type="ExecuteFunction">
+                        <FunctionName>createTemplate</FunctionName>
+                    </Action>
+                </Control>
+                <Control xsi:type="Button" id="grp2btn5">
+                    <Label resid="grp2btn5.Label" />
+                    <Supertip>
+                        <Title resid="grp2btn5.Label" />
+                        <Description resid="grp2btn5.ToolTip" />
+                    </Supertip>
+                    <Icon>
+                        <bt:Image size="16" resid="Icon.16x16"/>
+                        <bt:Image size="32" resid="Icon.32x32"/>
+                        <bt:Image size="80" resid="Icon.80x80"/>
+                    </Icon>
+                    <Action xsi:type="ExecuteFunction">
+                        <FunctionName>loadTemplateDemoUDF</FunctionName>
+                    </Action>
+                </Control> -->
+                <Control xsi:type="Button" id="grp2btn6">
+                    <Label resid="grp2btn6.Label" />
+                    <Supertip>
+                        <Title resid="grp2btn6.Label" />
+                        <Description resid="grp2btn6.ToolTip" />
+                    </Supertip>
+                    <Icon>
+                        <bt:Image size="16" resid="Icon.16x16"/>
+                        <bt:Image size="32" resid="Icon.32x32"/>
+                        <bt:Image size="80" resid="Icon.80x80"/>
+                    </Icon>
+                    <Action xsi:type="ExecuteFunction">
+                        <FunctionName>loadTemplateUDF</FunctionName>
+                    </Action>
+                </Control>
+                <!-- <Control xsi:type="Button" id="showLocaleInfo">
+                    <Label resid="showLocaleInfo.Label" />
+                    <Supertip>
+                        <Title resid="showLocaleInfo.Label" />
+                        <Description resid="showLocaleInfo.ToolTip" />
+                    </Supertip>
+                    <Icon>
+                        <bt:Image size="16" resid="Icon.16x16"/>
+                        <bt:Image size="32" resid="Icon.32x32"/>
+                        <bt:Image size="80" resid="Icon.80x80"/>
+                    </Icon>
+                    <Action xsi:type="ExecuteFunction">
+                        <FunctionName>showLocaleInspector</FunctionName>
+                    </Action>
+                </Control> -->
+              </Group>
+              <Label resid="tabJaLi.Label" />
+            </CustomTab>
+
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+    <Resources>
+      <bt:Images>
+        <bt:Image id="Icon.16x16" DefaultValue="https://localhost:3000/assets/jali-logo-img-16.png"/>
+        <bt:Image id="Icon.32x32" DefaultValue="https://localhost:3000/assets/jali-logo-img-32.png"/>
+        <bt:Image id="Icon.80x80" DefaultValue="https://localhost:3000/assets/jali-logo-img-80.png"/>
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="Functions.Script.Url" DefaultValue="https://localhost:3000/functions.js"/>
+        <bt:Url id="Functions.Metadata.Url" DefaultValue="https://localhost:3000/functions.json"/>
+
+        <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812"/>
+
+        <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="Functions.Namespace" DefaultValue="MLTK"/>
+
+        <bt:String id="GetStarted.Title" DefaultValue="Get started with JaLi Software's Excel add-in MLTK!"/>
+
+        <bt:String id="CommandsGroup.Label" DefaultValue="Taskpane"/>
+        <bt:String id="TaskpaneButton.Label" DefaultValue="Show Task Pane"/>
+        <!-- <bt:String id="ProtectionButton.Label" DefaultValue="Toggle Worksheet Protection" />
+        <bt:String id="grp1btn3.Label" DefaultValue="Incrmt Cell" />
+        <bt:String id="grp1btn4.Label" DefaultValue="Incrmt Cell (add2)" /> -->
+
+        <bt:String id="grp2.Label" DefaultValue="Utilities" />
+        <!-- <bt:String id="grp2btn1.Label" DefaultValue="Commands" />
+        <bt:String id="grp2btn2.Label" DefaultValue="UDFs" /> -->
+        <bt:String id="grp2btn3.Label" DefaultValue="Get FileName" />
+        <!-- <bt:String id="grp2btn4.Label" DefaultValue="Create Template JS" />
+        <bt:String id="grp2btn5.Label" DefaultValue="Get Demo Template Obj" /> -->
+        <bt:String id="grp2btn6.Label" DefaultValue="Get UDF Template Obj" />
+        <bt:String id="showLocaleInfo.Label" DefaultValue="Locale Inspector" />
+
+        <bt:String id="tabJaLi.Label" DefaultValue="JaLi" />
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="GetStarted.Description" DefaultValue="MLTK add-in loaded successfully. Go to the JaLi tab and click the 'Show Task Pane' button to get started."/>
+
+        <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Click to Show a Task Pane"/>
+        <!-- <bt:String id="ProtectionButton.ToolTip" DefaultValue="Click to protect or unprotect the current worksheet." />
+        <bt:String id="grp1btn3.ToolTip" DefaultValue="Increments the value in active cell." />
+        <bt:String id="grp1btn4.ToolTip" DefaultValue="Increments using add2 which uses add1 imported from taskpane.js file." /> -->
+
+        <!-- <bt:String id="grp2btn1.Tooltip" DefaultValue="Click to download the template for testing taskpane and ribbon commands."/>
+        <bt:String id="grp2btn2.ToolTip" DefaultValue="Click to download the template for testing UDFs." /> -->
+        <bt:String id="grp2btn3.ToolTip" DefaultValue="Click to get the file full name in the current cell." />
+        <!-- <bt:String id="grp2btn4.ToolTip" DefaultValue="Creates a template that can be used to test UDFs from JS programming only." />
+        <bt:String id="grp2btn5.ToolTip" DefaultValue="Creates a template demo for testing using a template object." /> -->
+        <bt:String id="grp2btn6.ToolTip" DefaultValue="Creates a template for testing UDFs using a template object." />
+        <bt:String id="showLocaleInfo.ToolTip" DefaultValue="Shows locale information for a locale in the current cell (or any other locale)." />
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>

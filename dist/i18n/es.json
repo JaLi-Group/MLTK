@@ -1,0 +1,83 @@
+{
+    "ui": {
+        "tabs": {
+            "locale": "Herramientas de localización",
+            "merge": "Vista previa de la fusión",
+            "dates": "Formatos de fechas",
+            "numbers": "Formatos numéricos",
+            "settings": "Escenarios"
+        }
+    },
+    "merge": {
+        "controls":{
+            "loadRecBtnLbl": "Recomendación seleccionada,",
+            "prevBtnLbl": "Anterior",
+            "nextBtnLbl": "Siguiente",
+            "copyBtnLbl": "Copiar a la carpeta",
+            "insertBtnLbl": "Insertar en la hoja de trabajo",
+            "goBtnLbl": "Fusión",
+            "recNumLabelLbl": "ID",
+            "recNumInputPlaceHolder": "Introduce ID"
+        },
+        "ltrTexts":{
+            "dear": "Querido",
+            "ltrP01": "Esta declaración contiene información sobre tu empleo con JaLi Software.",
+            "ltrP02": "Esta información representa los datos que tenemos en nuestra base de datos. Por favor, revise estos datos detenidamente y contacte con Recursos Humanos si necesita realizar algún cambio.",
+            "personalInfo": "Información personal",
+            "planInfo": "Fecha de declaración:",
+            "dob": "Fecha de nacimiento:",
+            "doh": "Fecha de contratación:",
+            "age60": "Alcance de los 60 años:",
+            "age65": "Alcance de los 65 años:",
+            "erd": "Fecha de jubilación anticipada (DRA):",
+            "nrd": "Fecha de jubilación normal (NRD):",
+            "salary": "Salario (anual):",
+            "closingP01": "Si tiene alguna pregunta, por favor contacte con Recursos Humanos en el 1 (888) 555-5555.",
+            "closingP02": "John Smith",
+            "closingP03": "Director de Recursos Humanos"
+        }
+    },
+    "locale": {
+        "controls":{
+            "inputLabel": "Código del idioma:",
+            "localeLookupBtn": "Entra",
+            "loadSelectionBtn": "Carga",
+            "localeLbl": "Etiqueta:",
+            "langCodeLbl": "Código de idioma:",
+            "langNameLbl": "Nombre del idioma:",
+            "langNameLocalLbl": "Nombre del idioma (local):",
+            "countryCodeLbl": "Código de país:",
+            "countryNameLbl": "Nombre del país:",
+            "flagLbl": "Bandera:",
+            "continentLbl": "Continente:",
+            "regionLbl": "Región:",
+            "currencyLbl": "Moneda",
+            "currencyNameLbl": "- Nombre:",
+            "currencyNameLocalLbl": "- Nombre (local):",
+            "currencyCodeLbl": "- Código:",
+            "currencySymbolLbl": "- Símbolo:"
+        }
+    },
+    "dates": {
+        "title": "Formatos de fechas",
+        "locale": "Ubicación",
+         "show": "Formatos de los programas",
+        "apply": "Solicita la selección"
+    },
+    "numbers": {
+        "title": "Number Formats",
+        "inputsSection": "Currency Formatting",
+        "currencySection": "Currency Formatting",
+        "numericSection": "Numeric Formatting",
+        "customSection": "Custom Formatting",
+        "locale": "Locale",
+        "show": "Show Formats",
+        "apply": "Apply to selection",
+        "controls": {
+            "numbersLoadBtn": "Load",
+            "numbersNumberLbl": "Number",
+            "apply": "Apply to selection",
+            "copy": "Copy "
+        }
+    }
+}

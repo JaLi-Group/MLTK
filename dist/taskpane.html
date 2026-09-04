@@ -1,0 +1,123 @@
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT License. -->
+<!-- This file shows how to design a first-run page that provides a welcome screen to the user about the features of the add-in. -->
+
+<!doctype html>
+<html lang="en-us">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Multi-Language Toolkit (MLTK) Add-in</title>
+
+    <!-- Office JavaScript API -->
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+
+    <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui#/. -->
+    <link rel="stylesheet" href="https://res-1.cdn.office.net/files/fabric-cdn-prod_20230815.002/office-ui-fabric-core/11.1.0/css/fabric.min.css"/>
+
+    <!-- Template styles -->
+    <link href="6112c431f02da58825de.css" rel="stylesheet" type="text/css" />
+  <script defer src="polyfill.js"></script><script defer src="taskpane.js"></script><script defer src="commands.js"></script><script defer src="functions.js"></script></head>
+
+  <body class="ms-font-m ms-welcome ms-Fabric">
+
+    <!-- Previous structure
+    <header class="ms-welcome__header ms-bgColor-neutralLighter">
+      <img width="90" height="90" src="../../assets/jali-logo-img-80.png" alt="JaLi Software" title="JaLi Software Excel Toolkit"/>
+      <h1 class="ms-font-su">Excel Toolkit</h1>
+      <h2 class="ms-font-su">by JaLi Software</h2>
+    </header>
+
+    <section id="sideload-msg" class="ms-welcome__main">
+      <h2 class="ms-font-xl">Please
+        <a target="_blank" href="https://learn.microsoft.com/office/dev/add-ins/testing/test-debug-office-add-ins#sideload-an-office-add-in-for-testing">sideload</a>
+         your add-in to see app body.
+      </h2>
+    </section>
+
+    <main id="app-body" class="ms-welcome__main" style="display: none">
+
+      <div role="button" id="btnInfo" class="btnHelp">
+        <p>For info on JaLi's MLTK functions, <span class="clickHere"><strong>click here</strong></span>.</p>
+      </div>
+
+      <div role="button" id="btnLoadTemplateUFD" class="ms-welcome__action ms-Button ms-Button--hero ms-font-xl">
+        <span class="ms-Button-label">Load UDFs (new)</span>
+      </div>
+
+      <div>
+        <p id="temporalDate"></p>
+      </div>
+
+      <div class="locale-inspector">
+          <h2>Locale Inspector</h2>
+
+          <label>Locale Tag:</label>
+          <input id="localeInput" type="text" placeholder="fr-CA, en-US, es-ES">
+
+          <button id="lookupBtn">Lookup</button>
+          <button id="loadSelectionBtn">Load Selected Cell</button>
+
+          <div id="results"></div>
+      </div>
+      <div>
+          <label>Record Number:</label>
+          <input id="recordInput" type="number" min="1" />
+          <button id="loadRecordBtn">Load Record</button>
+
+          <div id="letterPreview" class="letter-preview"></div>
+      </div>
+    </main>
+    -->
+
+    <!-- <div id="menuBar" class="menu-bar">
+      <button id="menuHome" class="menu-item">Home</button>
+      <button id="menuLocale" class="menu-item">Locale</button>
+      <button id="menuMerge" class="menu-item">MailMerge</button>
+      <button id="menuDates" class="menu-item">Dates</button>
+      <button id="menuNumbers" class="menu-item">Numbers</button>
+      <button id="menuSettings" class="menu-item">Settings</button>
+    </div> -->
+
+<div id="menuBar" class="menu-bar">
+  <div id="menuHome" class="menu-item" data-menu="home">Home</div>
+
+  <div id="menu-item-dropdown_preview" class="menu-item dropdown">
+    Previews ▼
+    <div class="dropdown-content">
+      <div id="menuLocale" class="dropdown-item">Locale Inspector</div>
+      <div id="menuMerge" class="dropdown-item">MailMerge</div>
+      <div id="menuDates" class="dropdown-item">Dates</div>
+      <div id="menuNumbers" class="dropdown-item">Numbers</div>
+    </div>
+  </div>
+
+  <!-- <div class="menu-item dropdown">
+    Tools ▼
+    <div class="dropdown-content">
+      <div class="dropdown-item">Serial Date Converter</div>
+      <div class="dropdown-item">Custom Format Validator</div>
+    </div>
+  </div> -->
+
+  <div id="menuSettings" class="menu-item">Settings</div>
+  <div id="menuHelp" class="menu-item">Help</div>
+</div>
+
+
+    <div id="tab-panels">
+        <div id="tab-home" class="tab-panel"></div>
+        <div id="tab-locale" class="tab-panel"></div>
+        <div id="tab-merge" class="tab-panel"></div>
+        <div id="tab-dates" class="tab-panel"></div>
+        <div id="tab-numbers" class="tab-panel"></div>
+        <div id="tab-settings" class="tab-panel"></div>
+        <div id="tab-help" class="tab-panel"></div>
+    </div>
+
+    <script src="4ee556edc637b271bb00.js"></script>
+    <script src="9e883893cd42734198c2.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,109 @@
+{
+    "ui": {
+        "tabs": {
+            "home": "Home",
+            "locale": "Locale Tools",
+            "merge": "Merge Preview",
+            "dates": "Date Formats",
+            "numbers": "Number Formats",
+            "settings": "Settings",
+            "help": "Help"
+        },
+        "menu": {
+            "home": "Home",
+            "previews": "Previews",
+            "tools": "Tools",
+            "settings": "Settings",
+            "help": "Help",
+
+            "mailmerge": "MailMerge",
+            "dates": "Dates",
+            "numbers": "Numbers",
+
+            "localeInspector": "Locale Inspector",
+            "serialConverter": "Serial Date Converter",
+            "customFormat": "Custom Format Validator"
+        }
+    },
+    "merge": {
+        "controls":{
+            "loadRecBtnLbl": "Selected Rec",
+            "prevBtnLbl": "Previous",
+            "nextBtnLbl": "Next",
+            "copyBtnLbl": "Copy to Clipboard",
+            "insertBtnLbl": "Insert into Worksheet",
+            "goBtnLbl": "Merge",
+            "recNumLabelLbl": "ID",
+            "recNumInputPlaceHolder": "Enter ID"
+        },
+        "ltrTexts":{
+            "dear": "Dear",
+            "ltrP01": "This statement contains information about your empoyment with JaLi Software.",
+            "ltrP02": "This information represents the data that we have in our database. Please review this data carefully and contact Human Resources if you need to make any changes.",
+            "personalInfo": "Personal Information",
+            "planInfo": "Statement Date:",
+            "dob": "Date of Birth:",
+            "doh": "Date of Hire:",
+            "age60": "Attainment of age 60:",
+            "age65": "Attainment of age 65:",
+            "erd": "Earliest Retirement Date (ERD):",
+            "nrd": "Normal Retirement Date (NRD):",
+            "salary": "Salary (Annual):",
+            "closingP01": "Should you have any question, please contact Human Resources at 1 (888) 555-5555.",
+            "closingP02": "John Smith",
+            "closingP03": "Director, Human Resources"
+        }
+    },
+    "locale": {
+        "controls":{
+            "inputLabel": "Locale Tag:",
+            "localeLookupBtn": "Enter",
+            "loadSelectionBtn": "Load",
+            "localeLbl": "Tag:",
+            "langCodeLbl": "Language Code:",
+            "langNameLbl": "Language Name:",
+            "langNameLocalLbl": "Language Name (local):",
+            "countryCodeLbl": "Country Code:",
+            "countryNameLbl": "Country name:",
+            "flagLbl": "Flag:",
+            "continentLbl": "Continent:",
+            "regionLbl": "Region:",
+            "currencyLbl": "Currency",
+            "currencyNameLbl": " - Name:",
+            "currencyNameLocalLbl": " - Name (local):",
+            "currencyCodeLbl": " - Code:",
+            "currencySymbolLbl": " - Symbol:"
+        }
+    },
+    "dates": {
+        "title": "Date Formats",
+        "locale": "loc:",
+        "date": "date:",
+        "format": "customFormat:",
+        "load": "Load",
+        "show": "Show Formats",
+        "copy": "Copy to Clipboard",
+        "apply": "Apply to selection",
+        "cstFmt": {
+            "Ex1": "dddd, MMMM D, YYYY",
+            "Ex2": "MMMM 'of' YYYY",
+            "Ex3": "ddd, MM-D-YY"
+        }
+    },
+    "numbers": {
+        "title": "Number Formats",
+        "inputsSection": "Currency Display Options:",
+        "currencySection": "Currency Formatting",
+        "numericSection": "Numeric Formatting (style other than 'currency')",
+        "customSection": "Custom Formatting",
+        "locale": "loc = ",
+        "show": "Load",
+        "apply": "Apply to selection",
+        "controls": {
+            "numbersLoadBtn": "Load",
+            "numbersNumberLbl": "num = ",
+            "apply": "Apply to selection",
+            "copy": "Copy "
+        }
+    }
+}

@@ -1,0 +1,270 @@
+{
+    "allowCustomDataForDataTypeAny": true,
+    "functions": [
+        {
+            "description": "Formats a specific date to text according to different languages and format type. See MLT help page for details",
+            "id": "FORMATDATE",
+            "name": "FORMATDATE",
+            "parameters": [
+                {
+                    "description": "The date to be converted to text",
+                    "name": "xlDate",
+                    "type": "number"
+                },
+                {
+                    "description": "The locale Tag to use (e.g., 'FR-CA' for French Canada, 'EN-US' for English US). See the Help page for a complete list.",
+                    "name": "locTag",
+                    "type": "string"
+                },
+                {
+                    "description": "The format to use (Preset: \"short\", \"long\" or \"full\".  For custom format use \"customFormat\" ).",
+                    "name": "formatType",
+                    "type": "string"
+                },
+                {
+                    "description": "Required when 'formatType' = \"customFormat\".\r\n//  *",
+                    "name": "customFormat",
+                    "optional": true,
+                    "type": "string"
+                }
+            ],
+            "result": {
+                "type": "string"
+            }
+        },
+        {
+            "description": "Returns the day name of a specific date. See MLT help page for details",
+            "id": "GETDAYNAME",
+            "name": "GETDAYNAME",
+            "parameters": [
+                {
+                    "description": "The date from which to return the weekday name.",
+                    "name": "xlDate",
+                    "type": "number"
+                },
+                {
+                    "description": "The locale Tag to use (e.g., 'FR-CA' for French Canada, 'EN-US' for English US). See the Help page for a complete list.",
+                    "name": "locTag",
+                    "type": "string"
+                },
+                {
+                    "description": "(Optional: Default is FALSE) True to get the abbreviated weekday name.",
+                    "name": "shortDay",
+                    "optional": true,
+                    "type": "boolean"
+                }
+            ],
+            "result": {
+                "type": "string"
+            }
+        },
+        {
+            "description": "Returns the month name of a specific date. See MLT help page for details",
+            "id": "GETMONTHNAME",
+            "name": "GETMONTHNAME",
+            "parameters": [
+                {
+                    "description": "The date from which to return the month name.",
+                    "name": "xlDate",
+                    "type": "number"
+                },
+                {
+                    "description": "The locale Tag to use (e.g., 'FR-CA' for French Canada, 'EN-US' for English US). See the Help page for a complete list.",
+                    "name": "locTag",
+                    "type": "string"
+                },
+                {
+                    "description": "(Optional: Default is FALSE) True to get the abbreviated month name.",
+                    "name": "shortMonth",
+                    "optional": true,
+                    "type": "boolean"
+                }
+            ],
+            "result": {
+                "type": "string"
+            }
+        },
+        {
+            "description": "Returns the day number of a specific date. See MLT help page for details",
+            "id": "GETDAYNUM",
+            "name": "GETDAYNUM",
+            "parameters": [
+                {
+                    "description": "The date from which to return the day number",
+                    "name": "xlDate",
+                    "type": "number"
+                }
+            ],
+            "result": {
+                "type": "number"
+            }
+        },
+        {
+            "description": "Returns the month number of a specific date. See MLT help page for details",
+            "id": "GETMONTHNUM",
+            "name": "GETMONTHNUM",
+            "parameters": [
+                {
+                    "description": "The date from which to return the month number.",
+                    "name": "xlDate",
+                    "type": "number"
+                }
+            ],
+            "result": {
+                "type": "number"
+            }
+        },
+        {
+            "description": "Returns the year of a specific date. See MLT help page for details",
+            "id": "GETYEARNAME",
+            "name": "GETYEARNAME",
+            "parameters": [
+                {
+                    "description": "The date from which to return the day number.",
+                    "name": "xlDate",
+                    "type": "number"
+                },
+                {
+                    "description": "(Optional: Default = 4) Number of digits for the year: 4=\"YYYY\" and 2=\"YY\".",
+                    "name": "shortYear",
+                    "optional": true,
+                    "type": "number"
+                }
+            ],
+            "result": {
+                "type": "number"
+            }
+        },
+        {
+            "description": "Returns the ordinal of a number 'num' based the language 'lang'. See the Help page for details",
+            "id": "GETORDINAL",
+            "name": "GETORDINAL",
+            "parameters": [
+                {
+                    "description": "The number to which to append the ordinal.",
+                    "name": "num",
+                    "type": "number"
+                },
+                {
+                    "description": "The locale Tag to use (e.g., 'FR-CA' for French Canada, 'EN-US' for English US). See the Help page for a complete list.",
+                    "name": "locTag",
+                    "type": "string"
+                },
+                {
+                    "description": "(Optional: Default is based on Locale settings) True to add ordinal suffix to integers greater than 1. Applies to certain languages. Overrides the default set for the language in Locale.",
+                    "name": "isAll",
+                    "optional": true,
+                    "type": "boolean"
+                }
+            ],
+            "result": {
+                "type": "string"
+            }
+        },
+        {
+            "description": "Formats a number according to different locales and languages standards. See MLT help page for details",
+            "id": "FORMATNUMBER",
+            "name": "FORMATNUMBER",
+            "parameters": [
+                {
+                    "description": "(Required) The number to be converted to text",
+                    "name": "num",
+                    "type": "number"
+                },
+                {
+                    "description": "The locale Tag to use (e.g., 'FR-CA' for French Canada, 'EN-US' for English US). See the Help page for a complete list.",
+                    "name": "locTag",
+                    "type": "string"
+                },
+                {
+                    "description": "(Required) The format to use (Preset: \"decimal\", \"currency\", \"percent\" or \"unit\").",
+                    "name": "paramStyle",
+                    "type": "string"
+                },
+                {
+                    "description": "(Optional) The tag to us for currency. (Preset: \"symbol\", \"code\", \"name\" or \"narrowSymbol\").",
+                    "name": "paramCurrencyDisplay",
+                    "optional": true,
+                    "type": "string"
+                },
+                {
+                    "description": "(Optional) Number of decimals.  Ignored for currencies as it uses locale standards.",
+                    "name": "dec",
+                    "optional": true,
+                    "type": "number"
+                }
+            ],
+            "result": {
+                "type": "string"
+            }
+        },
+        {
+            "description": "Builb a proper locale tag from language and country tags or returns an error message",
+            "id": "BUILDLOCALTAG",
+            "name": "BUILDLOCALTAG",
+            "parameters": [
+                {
+                    "description": "(Required) The locale tag for the language (Ex. 'fr' for French, 'en' for English, 'es' for Spanis). See the Help page for a complete list.",
+                    "name": "lng",
+                    "type": "string"
+                },
+                {
+                    "description": "(Required) The locale tag for the country (Ex. 'CA' for Canada, 'ES' for Spain, 'FR' for France). See the Help page for a complete list.",
+                    "name": "cntr",
+                    "type": "string"
+                }
+            ],
+            "result": {
+                "type": "string"
+            }
+        },
+        {
+            "description": "Returns the country locale code from a country name.",
+            "id": "FINDCOUNTRYCODE",
+            "name": "FINDCOUNTRYCODE",
+            "parameters": [
+                {
+                    "description": "Country name (e.g., \"Canada\", \"Spain\", \"Eritrea\")",
+                    "name": "name",
+                    "type": "string"
+                }
+            ],
+            "result": {
+                "type": "string"
+            }
+        },
+        {
+            "description": "Returns all languages spoken in a country.",
+            "id": "FINDCOUNTRYLANGUAGES",
+            "name": "FINDCOUNTRYLANGUAGES",
+            "parameters": [
+                {
+                    "description": "Country name (e.g., \"Canada\", \"Eritrea\")",
+                    "name": "name",
+                    "type": "string"
+                }
+            ],
+            "result": {
+                "dimensionality": "matrix"
+            }
+        },
+        {
+            "description": "Returns locale information based on the requested field.",
+            "id": "GETLOCALEINFO",
+            "name": "GETLOCALEINFO",
+            "parameters": [
+                {
+                    "description": "The locale Tag to use (e.g., 'FR-CA' for French Canada, 'EN-US' for English US). See the Help page for a complete list.",
+                    "name": "locTag",
+                    "type": "string"
+                },
+                {
+                    "description": "Field name (e.g., \"CountryName\", \"LanguageCode\", \"All\")",
+                    "name": "field",
+                    "type": "string"
+                }
+            ],
+            "result": {}
+        }
+    ]
+}

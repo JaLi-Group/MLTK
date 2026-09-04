@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Use the taskpane-root path you confirmed works -->
+  <link rel="stylesheet" href="taskpane/tabs/dates.css">
+  <title>Dates</title>
+</head>
+<body>
+  <h2 id="dates-title">Date Formats</h2>
+  <div>
+    MLTK.FormatDate(<em>date</em>, <em>loc</em>, <em>style</em>, <em>cstFormat</em>, <em>[dec]</em>)<br>
+  </div>
+
+  <section id="dateInput">
+      <h3 id="numberInputsHeader">Enter a Value for:</h3>
+
+      <div class="dates-controls">
+        <label id="dateslocaleLbl"><em>loc</em>:</label>
+        <input id="datesLocaleInput" type="text" placeholder="en-CA" />
+        <button type="button" id="datesLocaleLoadCellBtn">Load</button>
+      </div>
+
+      <div class="dates-controls">
+        <label id="datesDateLbl"><em>style</em>:</label>
+        <!-- keep text input for flexible formats; we also provide a date picker toggle -->
+        <input id="datesDateInput" class="datesTextInline" type="text" placeholder="1987-07-25" />
+        <input id="datesDatePicker" class="datesDatePickNone" type="date" />
+        <button type="button" id="datesDateLoadCellBtn">Load</button>
+        <button type="button" id="datesTogglePickerBtn">Toggle Date Picker</button>
+      </div>
+
+      <div class="dates-controls">
+        <label id="datesFormatLbl"><em>cstFormat</em>:</label>
+        <input id="datesFormatInput" type="text" placeholder="Cddd, MMMM D*/oa, YYYY" />
+        <button type="button" id="datesFormatLoadCellBtn">Load</button>
+        <button type="button" id="datesCopyFormatBtn">Copy Format</button>
+        <button type="button" id="datesApplyFormatBtn">Apply to Selection</button>
+      </div>
+  </section>
+
+
+  <div id="datesMsg" class="dates-output"></div>
+
+  <div id="datesOutput" class="dates-output"></div>
+
+  <script src="taskpane/tabs/dates.js"></script>
+</body>
+</html>
