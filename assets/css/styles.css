@@ -116,3 +116,37 @@ footer {
     color: #fff;
 }
 
+/* Hamburger button */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Mobile menu hidden by default */
+#navMenu {
+    transition: max-height 0.3s ease-out;
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+
+    .nav-links {
+        flex-direction: column;
+        background: #1a1a1a;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    .nav-links li {
+        padding: 15px 0;
+        text-align: center;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
