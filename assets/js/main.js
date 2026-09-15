@@ -3,8 +3,8 @@ console.log("JaliGroup main site loaded.");
 
 function toggleMenu() {
     const menu = document.getElementById("navMenu");
-    if (menu.style.maxHeight) {
-        menu.style.maxHeight = null;
+    if (menu.style.maxHeight && menu.style.maxHeight !== "0px") {
+        menu.style.maxHeight = "0px";
     } else {
         menu.style.maxHeight = menu.scrollHeight + "px";
     }
