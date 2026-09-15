@@ -1,7 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta http-equiv="refresh" content="0; URL='en/index.html'" />
+    <meta charset="UTF-8">
+    <title>JaliGroup – Redirecting…</title>
+    <script>
+        // Detect browser language
+        const lang = navigator.language || navigator.userLanguage;
+
+        // Normalize language code
+        const isFrench = lang.toLowerCase().startsWith('fr');
+
+        // Redirect based on language
+        if (isFrench) {
+            window.location.replace('/fr/index.html');
+        } else {
+            window.location.replace('/en/index.html');
+        }
+    </script>
 </head>
-<body></body>
+<body>
+    <p>Redirection en cours… / Redirecting…</p>
+</body>
 </html>
