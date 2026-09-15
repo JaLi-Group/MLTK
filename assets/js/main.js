@@ -9,3 +9,31 @@ function toggleMenu() {
         menu.style.maxHeight = menu.scrollHeight + "px";
     }
 }
+
+// Language toggle that keeps the current page
+document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.getElementById("langToggle");
+    if (!toggle) return;
+
+    const path = window.location.pathname;
+
+    // Detect current language
+    const isFrench = path.startsWith("/fr/");
+    const isEnglish = path.startsWith("/en/");
+
+    // Compute target path
+    let target = path;
+
+    if (isFrench) {
+        toggle.textContent = "EN";
+        target = path.replace("/fr/", "/en/");
+    } else if (isEnglish) {
+        toggle.textContent = "FR";
+        target = path.replace("/en/", "/fr/");
+    } else {
+        // Fallback: redirect to root
+        target = "/en/index.html";
+    }
+
+    toggle.href = target;
+});
