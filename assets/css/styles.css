@@ -94,3 +94,25 @@ footer {
     color: #fff;
     margin-top: 40px;
 }
+
+.lang-switch {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+
+.lang-switch a {
+    background: #fff;
+    color: #003c8f;
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid #003c8f;
+}
+
+.lang-switch a:hover {
+    background: #003c8f;
+    color: #fff;
+}
+
