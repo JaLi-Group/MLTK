@@ -10,6 +10,9 @@
             <li><a href="https://docs.jaligroup.ca">Documentation</a></li>
         </ul>
     </nav>
+    <div class="lang-switch">
+        <a href="/fr/index.html">FR</a>
+    </div>
 </header>
 
 <footer>
