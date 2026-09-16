@@ -1,0 +1,9 @@
+{
+    "navBar": {
+        "home": "Accueil",
+        "tools": "Outils",
+        "pricing": "Tarification",
+        "about": "A propos",
+        "contact": "Contact"
+    }
+}
