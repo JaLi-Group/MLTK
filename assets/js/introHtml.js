@@ -13,3 +13,4 @@ if (introEnEl) {
 if (introFrEl) {
     introFrEl.innerHTML = GetIntroInnerHTML("fr");
 }
+

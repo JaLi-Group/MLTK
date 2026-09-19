@@ -1,19 +1,10 @@
     <!-- Navigation -->
     <header>
-    <header>
         <nav id="mainNavBarEn" class="navbar"></nav>
-        <div class="lang-switch">
-            <a id="langToggle" href="#">FR</a>
-        </div>
-
-    <div class="lang-switch">
-        <a id="langToggle" href="#">FR</a>
-    </div>
     </header>
 
-
     <footer>
-        <p>© 2026 JaliGroup — All rights reserved.</p>
+        <p>© 2026 BPOpti Tech — All rights reserved.</p>
     </footer>
 
-    <script src="/assets/js/navBar.js"></script>
+    <script type="module" src="/assets/js/navBar.js"></script>

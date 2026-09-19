@@ -29,39 +29,103 @@ window.toggleMenu = function toggleMenu() {
     }
 };
 
-// Language toggle that keeps the current page
-function configureLanguageToggle() {
-    const toggle = document.getElementById("langToggle");
-    if (!toggle) return;
+function configureLanguageSelector() {
+    const picker = document.getElementById("languagePicker");
+    const button = document.getElementById("languageButton");
+    const label = document.getElementById("languageButtonLabel");
+    const menu = document.getElementById("languageMenu");
 
-    const currentUrl = new URL(window.location.href);
-    const languageMatch = currentUrl.pathname.match(/(^|\/)(en|fr)(?=\/|$)/);
+    if (!picker || !button || !label || !menu) return;
 
-    if (!languageMatch) {
-        toggle.href = new URL("en/index.html", currentUrl).href;
-        return;
+    const currentPath = window.location.pathname;
+    const effectivePath = currentPath.endsWith("/") ? `${currentPath}index.html` : currentPath;
+
+    function getLocalizedPageUrl(targetLang, currentPathname = window.location.pathname) {
+        const path = currentPathname.endsWith("/") ? `${currentPathname}index.html` : currentPathname;
+        const segments = path.split("/").filter(Boolean);
+        const localeIndex = segments.findIndex(segment => ["en", "fr", "es"].includes(segment.toLowerCase()));
+
+        if (localeIndex === -1) {
+            return `/${targetLang}/index.html`;
+        }
+
+        const remainingSegments = segments.slice(localeIndex + 1);
+        const pagePath = remainingSegments.length > 0 ? `/${remainingSegments.join("/")}` : "/index.html";
+        return `/${targetLang}${pagePath}`;
     }
 
-    const currentLanguage = languageMatch[2];
-    const targetLanguage = currentLanguage === "fr" ? "en" : "fr";
+    const setCurrentLabel = () => {
+        const isFrench = /\/fr(?=\/|$)/.test(effectivePath);
+        label.textContent = isFrench ? "Français" : "English";
+    };
 
-    if (currentLanguage === "fr") {
-        toggle.textContent = "EN";
-    } else {
-        toggle.textContent = "FR";
-    }
+    const openMenu = () => {
+        picker.classList.add("open");
+    };
 
-    const targetPath = currentUrl.pathname.replace(
-        /(^|\/)(en|fr)(?=\/|$)/,
-        `$1${targetLanguage}`
-    );
+    const closeMenu = () => {
+        picker.classList.remove("open");
+    };
 
-    currentUrl.pathname = targetPath;
-    toggle.href = currentUrl.href;
+    let closeTimer = null;
+    const scheduleClose = () => {
+        if (closeTimer) clearTimeout(closeTimer);
+        closeTimer = setTimeout(() => {
+            closeMenu();
+        }, 120);
+    };
+
+    setCurrentLabel();
+
+    picker.addEventListener("mouseenter", () => {
+        if (closeTimer) clearTimeout(closeTimer);
+        openMenu();
+    });
+
+    picker.addEventListener("mouseleave", scheduleClose);
+    picker.addEventListener("focusin", openMenu);
+    picker.addEventListener("focusout", (event) => {
+        if (!picker.contains(event.relatedTarget)) {
+            scheduleClose();
+        }
+    });
+
+    button.addEventListener("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+
+        if (picker.classList.contains("open")) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    });
+
+    menu.addEventListener("click", (event) => {
+        const option = event.target.closest(".language-option");
+        if (!option) return;
+
+        event.preventDefault();
+        event.stopPropagation();
+
+        const target = option.dataset.url || getLocalizedPageUrl(option.dataset.lang || "en");
+        const nextLabel = option.dataset.label;
+        if (target) {
+            label.textContent = nextLabel;
+            closeMenu();
+            window.location.href = target;
+        }
+    });
+
+    document.addEventListener("click", (event) => {
+        if (!picker.contains(event.target)) {
+            closeMenu();
+        }
+    });
 }
 
 if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", configureLanguageToggle);
+    document.addEventListener("DOMContentLoaded", configureLanguageSelector);
 } else {
-    configureLanguageToggle();
+    configureLanguageSelector();
 }

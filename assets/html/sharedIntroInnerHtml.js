@@ -7,8 +7,9 @@ export function GetIntroInnerHTML(lang) {
     const introLbls = lbls.intro;
 
     return `
+        <h2>BP<em>Opti</em> Tech</h2>
         <h3>${introLbls.title1}</h3>
-        <div><strong>BPOpti Tech</strong> ${introLbls.content1}</div>
+        <div><strong>BP<em>Opti</em> Tech</strong> ${introLbls.content1}</div>
         </div>
         <h3>${introLbls.title2}</h3>
         <div>${introLbls.content2}</div><br>
