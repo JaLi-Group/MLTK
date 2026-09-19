@@ -1,9 +1,24 @@
 {
     "navBar": {
+        "title1": "Business Processes Optimization",
+        "tagLine": "Precision tools engineered for excellence",
         "home": "Home",
         "tools": "Tools",
         "pricing": "Pricing",
         "about": "About",
         "contact": "Contact"
+    },
+    "intro": {
+        "title1": "Software engineering driving operational excellence",
+        "title2": "Innovation driven by our community",
+        "whyChooseTitle": "Why Choose MLTK?",
+        "content1": "strips the complexity out of your business processes to unlock peak organizational performance. By blending strategic workflow audits, deep-dive technical reporting, and actionable optimization roadmaps with custom cross-platform software development (Windows and Mac) and Office Add-ins, we embed seamless automation directly into your daily operations. We build the exact digital tools your enterprise needs to eliminate friction, reduce human error, and drive bottom-line quality and efficiency.",
+        "content2": "Our pursuit of operational excellence is fueled by robust, modern software architecture. Our flagship product, <strong>MLTK (Multi Lingual Tool Kit)</strong>, is a powerful MS Excel Add-in designed to eliminate the headache of international data merging by natively supporting over 370 distinct standards and locales. Built to streamline global corporate communications, it is fully powered by <strong>MLTK-Core</strong>, our robust JavaScript library available to developers worldwide via npm to build the next generation of multilingual applications.",
+        "whyChooseH": "Multi-Lingual Formatting",
+        "whyChooseP": "Dates and numbers formatting in over 370 languages and locales.",
+        "whyChooseH2": "MS Office Add-ins",
+        "whyChooseP2": "Professional-grade tools for business users and analysts.",
+        "whyChooseH3": "Documentation Portal",
+        "whyChooseP3": "Full function reference available at docs.bpoptitech.ca."
     }
 }

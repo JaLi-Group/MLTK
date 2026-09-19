@@ -2,18 +2,18 @@
 
 let navBarLbls = {};
 
-// HTML code for the English version of the navigation bar
+// HTML code for the shared version of the navigation bar
 export function GetNavBarInnerHTML(lang) {
 
     console.log(`window.labels_en => ${window.labels_en}`)
     console.log(`window.labels_fr => ${window.labels_fr}`)
 
-
     const lbls = lang === "fr" ? window.labels_fr  : window.labels_en;  
     navBarLbls = lbls.navBar;
 
     return  `
-        <div class="logo">JaliGroup</div>
+        <div class="logo">BP<em>Opti</em> Tech </div><br>
+        <div class="logo">${navBarLbls.title1}</div>
 
         <button class="hamburger" aria-label="Menu" onclick="toggleMenu()">
             <svg width="30" height="30" viewBox="0 0 100 80" fill="#ffffff">

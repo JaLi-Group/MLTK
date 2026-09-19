@@ -1,15 +1,12 @@
 
-import {GetNavBarInnerHTML} from "/assets/html/sharedNavBarInnerHtml.js";
+import { GetNavBarInnerHTML } from "/assets/html/sharedNavBarInnerHtml.js";
+import { ensureLabels } from "./i18n.js";
 
-
-const labelsEn = await loadLabels("en");
-const labelsFr = await loadLabels("fr");
-
-window.labels_en = labelsEn;
-window.labels_fr = labelsFr;
+await ensureLabels();
 
 const navBarEnEl = document.getElementById("mainNavBarEn");
 const navBarFrEl = document.getElementById("mainNavBarFr");
+const navBarEsEl = document.getElementById("mainNavBarEs");
 
 if (navBarEnEl) {
     navBarEnEl.innerHTML = GetNavBarInnerHTML("en");
@@ -19,9 +16,8 @@ if (navBarFrEl) {
     navBarFrEl.innerHTML = GetNavBarInnerHTML("fr");
 }
 
-async function loadLabels(lang) {
-    const response = await fetch(`/assets/i18n/${lang}.json`);
-    return response.json();
+if (navBarEsEl) {
+    navBarEsEl.innerHTML = GetNavBarInnerHTML("es");
 }
 
 window.toggleMenu = function toggleMenu() {
